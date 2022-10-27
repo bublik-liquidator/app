@@ -1,0 +1,30 @@
+/* .vhod {
+  position: absolute;
+  right: 10px;
+} */
+.font-weight-normal {
+  margin-left: auto;
+  margin-right: auto;
+  position: absolut;
+}
+.glavnaj {
+  position: absolute;
+  left: 10px;
+  top: 5px;
+}
+.kontk {
+  position: absolute;
+  left: 80px;
+  top: 5px;
+}
+.adminn{
+  position: absolute;
+  left: 160px;
+  top: 5px;
+}
+
+.kursachWort{
+  font-size: 20pt;
+  text-align: center;
+}
+

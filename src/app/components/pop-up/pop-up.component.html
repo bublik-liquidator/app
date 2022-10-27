@@ -1,0 +1,9 @@
+<div>Car name</div>
+<input type="text" placeholder="Название машины" class="form-control" [(ngModel)]="newCar.name" name="name" ><br> 
+<div>Car speed</div>
+<input type="text" placeholder="Скорость машины" class="form-control" [(ngModel)]="newCar.speed" ><br> 
+
+<button class="cale"  (click)="Cale(newCar)">Cale</button>
+<button class="save"  (click)="saveCarsToStorage()">Save</button>
+
+<!-- <button (click)="helloFunction();">Click Me</button> -->

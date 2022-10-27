@@ -1,0 +1,17 @@
+button{   
+    border-radius: 10px 10px 10px 10px; /*Закругляем уголки*/
+    position: relative; 
+    appearance: none;
+    border: 0;
+    border-radius: 5px;   
+    color: #fff;
+    padding: 8px 16px;
+    font-size: 16px;   
+}
+.save{
+    margin-left: 20px;
+    background: #0ca227;
+}
+.cale{
+    background: #a90808;
+}

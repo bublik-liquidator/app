@@ -1,0 +1,51 @@
+<!-- $(document).ready(function(){
+    starLoad("name");
+}); -->
+<!-- <app-pop-up [userName]="name" [userAge]="age"></app-pop-up>
+                <input type="text" [(ngModel)]="name" /> -->
+
+                
+<div class="container">
+      <table>
+        <tr>
+            <th>id </th>
+            <th>name</th>
+            <th>speed</th>
+            <th>button</th>
+           
+        </tr>
+        <tr *ngFor="let car of cars">
+            <td>
+                <div class="tablic">{{car.id}}                   
+                </div>
+            </td>
+            <td>
+                <div >{{car.name}}</div>
+                <!-- <input type="text" placeholder="Название машины" class="form-control" [(ngModel)]="car.name" name="name"
+                    (ngModelChange)="saveCarsToStorage()"><br> -->
+            </td>
+            <td>
+                <div class="tablic">{{car.speed}}                    
+                </div>
+            </td>
+            <td>
+                <button class="btn btn-warning btn-sm" (click)="EditCar(car)">Edit car</button>
+            </td> 
+            <td>
+                <button class="btn btn-warning btn-sm" class="btn btn-danger" (click)="deleteCar(car.id)">Del car</button>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+
+    <div class="centr">
+        <button class="AddCar" style="top:5px; display: block;"  (click)="AddButtonCar()">Хочу добавить новую машину</button>
+        <form *ngIf="isEdit">
+            <input type="text" placeholder="Название машины" class="form-control" [(ngModel)]="newCar.name"
+                name="name"><br>
+            <input type="text" placeholder="Speed" class="form-control" [(ngModel)]="newCar.speed" name="speed"><br>
+            <button class="btn btn-warning btn-sm" (click)="AddCar()">Добавить</button>
+        </form>
+    </div>
+</div>
