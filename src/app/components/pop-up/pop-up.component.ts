@@ -15,35 +15,15 @@ export class PopUpComponent
     this.InitCarPopUP();
    }
  
-  newCar = new CarData(); 
+  newCar = new CarData();
+  name : string; 
   cars: CarData[] = [];
 
   public InitCarPopUP() {        
-    this.newCar = this.sharedService.addData();
+    this.name = this.sharedService.addData();
     this.cars = JSON.parse(localStorage.getItem('cars') || '[]');
   }
-  saveCarsToStorage(){
-    for(let i=0;i<this.cars.length;i++){
-      if(this.cars[i].id==this.newCar.id){
-        console.log ("AAA"+this.cars[i].id)        
-        this.cars[i].name = this.newCar.name;
-        this.cars[i].speed = this.newCar.speed;
-        localStorage.setItem('cars', JSON.stringify(this.cars));
-      }
-    }  
-    // this.cars = this.cars.filter((obj) => obj.id == );
-    // localStorage.setItem('cars', JSON.stringify(this.cars));
-  }
-  Cale(CAR:CarData){
-    for(let i=0;i<this.cars.length;i++){
-      if(CAR.id==this.cars[i].id){
-        // CAR=this.cars[i];        
-        this.newCar.name=this.cars[i].name;
-        this.newCar.speed=this.cars[i].speed;
 
-      }
-    }  
-  }
 
    
 }
