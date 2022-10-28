@@ -1,9 +1,9 @@
 <div>Car name</div>
-<input type="text" placeholder="Название машины" class="form-control" [(ngModel)]="name" name="name" ><br> 
+<input type="text" placeholder="Название машины" class="form-control" [(ngModel)]="editedCar.name" name="name" ><br> 
 <div>Car speed</div>
-<input type="text" placeholder="Скорость машины" class="form-control" [(ngModel)]="speed" ><br> 
+<input type="text" placeholder="Скорость машины" class="form-control" [(ngModel)]="editedCar.speed" ><br> 
 <div>Car path_picturs</div>
-<input type="text" placeholder="Фото машины" class="form-control" [(ngModel)]="newCar.path_picturs" ><br> 
+<input type="text" placeholder="Фото машины" class="form-control" [(ngModel)]="editedCar.path_picturs" ><br> 
 
 <button class="cale"  (click)="Cale()">Cale</button>
 <button class="save"  (click)="saveCarsToStorage()">Save</button>

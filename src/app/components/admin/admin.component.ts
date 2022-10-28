@@ -20,7 +20,7 @@ export class AdminComponent implements OnInit {
   
   EditCar(car:CarData){
     this.matdialog.open(PopUpComponent);
-    this.sharedService.getData(car);
+    this.sharedService.initCar(car);
   }
   
   ngOnInit(): void {
