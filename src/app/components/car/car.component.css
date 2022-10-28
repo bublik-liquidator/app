@@ -19,3 +19,6 @@ button {
     width:50%;
     height:50%;
 }
+.CarName{
+    display:inline-block;
+  }

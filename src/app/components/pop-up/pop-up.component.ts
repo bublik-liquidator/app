@@ -15,15 +15,43 @@ export class PopUpComponent
     this.InitCarPopUP();
    }
  
-  newCar = new CarData();
-  name : string; 
+  newCar = new CarData(); 
   cars: CarData[] = [];
 
   public InitCarPopUP() {        
-    this.name = this.sharedService.addData();
+    this.newCar = this.sharedService.addData();
     this.cars = JSON.parse(localStorage.getItem('cars') || '[]');
   }
+  saveCarsToStorage(){
+    for(let i=0;i<this.cars.length;i++){
+      if(this.cars[i].id==this.newCar.id){  
+        // this.cars[i].name = this.newCar.name;
+        // this.cars[i].speed = this.newCar.speed;
+        this.cars[i] = this.newCar;
+        localStorage.setItem('cars', JSON.stringify(this.cars));
+      }
+    }  
+    // this.cars = this.cars.filter((obj) => obj.id == );
+    // localStorage.setItem('cars', JSON.stringify(this.cars));
+  }
+  Cale(CAR:CarData){
+    for(let i=0;i<this.cars.length;i++){
+      if(CAR.id==this.cars[i].id){
+        // CAR=this.cars[i];        
+        // this.newCar.name=this.cars[i].name;
+        // this.newCar.speed=this.cars[i].speed;
+        this.newCar=this.cars[i];
+        //!! крч проблема в том что оно почнемуто созраняет в сервис 
+        console.log("newCar.name: " + this.newCar.name);
+        console.log("newCar.speed: " + this.newCar.speed);
+        console.log("this.cars[i]: " + this.cars[i]);
+        console.log(" this.cars[i].name: "+this.cars[i].name);
+        console.log(" this.cars[i].speed: " + this.cars[i].speed);
+        console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAA ");
 
+      }
+    }  
+  }
 
    
 }
