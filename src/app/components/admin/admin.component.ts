@@ -24,12 +24,14 @@ export class AdminComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    this.initCars();
+    // this.initCars();
+    this.cars = this.sharedService.getAll();
   }
 
-  initCars() {
-    this.cars = JSON.parse(localStorage.getItem('cars') || '[]');
-  }
+  // initCars() {
+  //   this.cars = JSON.parse(localStorage.getItem('cars') || '[]');
+  // }
+
 
   AddButtonCar() {
     this.isEdit = !this.isEdit;
@@ -38,11 +40,14 @@ export class AdminComponent implements OnInit {
   AddCar() {
     this.addNewCar(this.newCar);
   } 
-
-  deleteCar(id: string) {
-    this.cars = this.cars.filter((obj) => obj.id != id);
-    console.log('deleted car with id=' + id);
-    this.saveCarsToStorage();
+  
+   deleteCar(id: string) {
+    this.sharedService.delete(id);
+    this.cars = this.sharedService.getAll();
+    // console.log(id+" ID");
+  //   this.cars = this.cars.filter((obj) => obj.id != id);
+  //   console.log('deleted car with id=' + id);
+  //   this.saveCarsToStorage();
   }
 
   saveCarsToStorage() {
@@ -50,13 +55,13 @@ export class AdminComponent implements OnInit {
   }
 
   addNewCar(car: CarData) {
-    car.id = Math.floor(Math.random() * 100).toString();
-
-    this.cars.push(car);
-    console.log('new car saved');
-
+    this.sharedService.create(car);
     this.newCar = new CarData();
-    this.saveCarsToStorage();
+    // car.id = Math.floor(Math.random() * 100).toString();
+    // this.cars.push(car);
+    // console.log('new car saved');
+    // this.newCar = new CarData();
+    // this.saveCarsToStorage();
   }
 
 }

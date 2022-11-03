@@ -24,10 +24,13 @@ export class PopUpComponent {
     CarData.copyFieldsValuesTo(this.editedCar, this.car);
     this.sharedService.initCar(this.editedCar);
     console.log('edited:' + this.editedCar.name);
+    this.sharedService.save();
   }
   Cale() {    
     this.editedCar.name = this.car.name;
     this.editedCar.speed = this.car.speed;
-    //!this.newCar=this.cars[i];
+    this.editedCar.path_picturs = this.car.path_picturs;
+    //!this.editedCar= this.car;
   }
+
 }
