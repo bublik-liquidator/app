@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LocalFailComponent } from './local-fail.component';
+import { ContactsComponent } from './Contacts.component';
 
-describe('LocalFailComponent', () => {
-  let component: LocalFailComponent;
-  let fixture: ComponentFixture<LocalFailComponent>;
+describe('ContactsComponent', () => {
+  let component: ContactsComponent;
+  let fixture: ComponentFixture<ContactsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LocalFailComponent ]
+      declarations: [ ContactsComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(LocalFailComponent);
+    fixture = TestBed.createComponent(ContactsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

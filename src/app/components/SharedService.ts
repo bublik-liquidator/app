@@ -33,6 +33,7 @@ export class SharedService {
     return 0;
   }
   create(Car: CarData) {
+    //сделать проверку на существующий IDn
     Car.id = Math.floor(Math.random() * 100).toString();
     this.cars.push(Car);
     console.log('new car saved' + Car);

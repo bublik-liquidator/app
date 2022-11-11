@@ -6,10 +6,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CarComponent } from './components/car/car.component';
-import { KontaktiComponent } from './components/kontakti/kontakti.component';
+import { ContactsComponent } from './components/Contacts/Contacts.component';
 import { HeaderComponent } from './components//header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { LocalFailComponent } from './components/local-fail/local-fail.component';
+
 
 import { CookieService } from 'ngx-cookie-service';
 import { VhodComponent } from './components/vhod/vhod.component';
@@ -23,7 +23,7 @@ import { PopUpComponent } from './components/pop-up/pop-up.component';
 
 const appRoutes: Routes = [
   {path:'',component:CarComponent},
-  {path:'about',component:KontaktiComponent},
+  {path:'about',component:ContactsComponent},
   {path:'admin',component:AdminComponent}
 ]
 
@@ -31,10 +31,9 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     CarComponent,
-    KontaktiComponent,
+    ContactsComponent,
     HeaderComponent,
     FooterComponent,
-    LocalFailComponent,
     VhodComponent,
     AdminComponent,
     PopUpComponent
