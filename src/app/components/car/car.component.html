@@ -1,62 +1,20 @@
-
 <div class="container">
-   
     <br>
-    <h4>    
-        <!-- <mark>Автомобиль:</mark>{{name}}
-        <small>{{model}}</small> -->
-    </h4>
-        <div class="alert alert-success">
-            Характеристики автомобиля:
-            <ul> <img src="{{newCar.path_picturs}}" class="auto"  alt="dsffaesgarf">
-                <li>ID автомобиля: <strong>{{newCar.id}}</strong></li>
-                <li>Имя автомобиля: <strong>{{newCar.name}}</strong></li>  
-                <li>Скорость: <strong>{{newCar.speed}}</strong> км</li>               
-                 
-                 
-                 
-            </ul>
-        </div>
-
-        <!-- <h5> Редактирование объекта</h5>
-        <button  class="btn btn-danger" (click)="showEdit()">Редактировать</button>
-        <div><br></div>
-        <form *ngIf="isEdit">
-            <div class="form-group">
-                 <input type="text"  placeholder="Название машины" class="form-control" [(ngModel)]="name" name="name"><br>
-                <input type="text"  placeholder="Модель машины" class="form-control" [(ngModel)]="model" name="model"><br>
-                <input type="number" placeholder="Скорость" class="form-control" [(ngModel)]="speed" name="speed"><br>
-                <input type="text"  placeholder="Цвет машины" class="form-control"[(ngModel)]="colors.car" name="car"><br>
-                <input type="text"  placeholder="Цвет салона" class="form-control"[(ngModel)]="colors.salon" name="salon"><br>
-                <input type="text"  placeholder="Цвет колёс" class="form-control"[(ngModel)]="colors.wheels" name="wheels">
-            </div> 
-        </form> 
-    <h5> Возможности автомобиля</h5>
-    <form (submit)="addOpt(option.value)">
-        <div class="form-group">
-            <label for="option">Добавление новой возможности</label>
-            <input type="text" id="option" placeholder="Введите что-то" class="form-control" #option>
-            <br>
-            <button type="submit" class="btn btn-outline-success btn-sss">Добавить</button>
-        </div>
-    </form>
-    <div class="alert alert-warning">
-        <ul>
-            <!-- <li *ngFor="let opt of options">
-                {{opt}} 
-                <button class="btn btn-warning btn-sm"(click)="deleteOpt(opt)">x</button>
-            </li> 
-        </ul>       
+    <div class="alert alert-success">
+        Характеристики автомобиля:
+        <ul> <img class="autoPhotos" src="{{newCar.path_picturs}}" class="auto" alt="dsffaesgarf">
+            <li>ID автомобиля: <strong>{{newCar.id}}</strong></li>
+            <li>Имя автомобиля: <strong>{{newCar.name}}</strong></li>
+            <li>Скорость: <strong>{{newCar.speed}}</strong> км</li>
+        </ul>
     </div>
--->
-    <h5>Выберите автомобиль</h5>   
-        <div class="CarName" *ngFor="let car of cars">
-        <button class="btn btn-danger" (click)="carSelect(car.name)">{{car.name}}</button>  <!-- наведение мыши события -->
-        </div>
-    <!-- <button   class="btn btn-info"  (click)="Look()">Look</button> -->
-    
 
-    <!-- <button (click)="LoadData()">Load data</button> -->
 
-    <!-- <div *ngIf="sesion"><h1>ifa{{sesion}}</h1></div> -->
+    <h5>Выберите автомобиль</h5>
+    <div class="CarName" *ngFor="let car of cars">
+        <button class="btn btn-danger" (click)="carSelect(car.name)">{{car.name}}</button>
+    </div>
+    <br><br>
+
+
 </div>

@@ -6,13 +6,13 @@
 
                 
 <div class="container">
-      <table>
+      <table class="tablica">
         <tr>
-            <th>id </th>
+            <th height="40">id </th>
             <th>name</th>
             <th>speed</th>
-            <th>IMG</th>
-            <th colspan="2">button</th>   
+            <th class="thImg">IMG</th>
+            <th colspan="2" class="lastTh">button</th>   
         </tr>
         <tr *ngFor="let car of cars">
             <td>
@@ -29,11 +29,11 @@
                 </div>
             </td>
             <td>
-                <div class="tablic"><img class="imgTabel"  src= {{car.path_picturs}} > {{car.path_picturs}}             
-                </div>
+                <div class="tablic"><img class="imgTabel"  src= {{car.path_picturs}} > {{car.path_picturs}}</div> 
             </td>
-            <td>
-                <button class="btn btn-warning btn-sm" (click)="EditCar(car)">Edit car</button>
+           
+            <td >
+                <button  class="btn btn-warning btn-sm" (click)="EditCar(car)">Edit car</button>
             </td> 
             <td>
                 <button class="btn btn-warning btn-sm" class="btn btn-danger" (click)="deleteCar(car.id)">Del car</button>
@@ -44,13 +44,12 @@
     <br>
 
     <div class="centr">
-        <button class="AddCar" style="top:5px; display: block;"  (click)="AddButtonCar()">Хочу добавить новую машину</button>
+        <button class="AddCar"   (click)="AddButtonCar()">Хочу добавить новую машину</button>
         <form *ngIf="isEdit">
             <input type="text" placeholder="Название машины" class="form-control" [(ngModel)]="newCar.name"
                 name="name"><br>
             <input type="text" placeholder="Speed" class="form-control" [(ngModel)]="newCar.speed" name="speed"><br>
-            <input type="text" placeholder="path_picturs" class="form-control" [(ngModel)]="newCar.path_picturs" name="path_picturs"><br>
-            <button class="btn btn-warning btn-sm" (click)="AddCar()">Добавить</button>
+            <input type="text" placeholder="path_picturs" class="form-control" [(ngModel)]="newCar.path_picturs" name="path_picturs"><br>            <button class="btn btn-warning btn-sm" (click)="AddCar()">Добавить</button>
         </form>
     </div>
 </div>

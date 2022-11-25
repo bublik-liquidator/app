@@ -21,14 +21,21 @@ export class PopUpComponent {
 
 
   saveCarsToStorage() {
+    if(+this.editedCar.speed <=0||+this.editedCar.speed >400||/[qwertyuiopasdfghjklzxcvbnm]/.test(this.editedCar.speed)||/[йцукенгшщзхъфывапролджэячсмитьбю]/.test(this.editedCar.speed)||this.editedCar.speed==null||this.editedCar.name==null||this.editedCar.path_picturs==null){
+      alert("Некоректный ввод данны");
+      return 0;
+     } 
+     else{
     console.log(this.car instanceof CarData);
     CarData.copyFieldsValuesTo(this.editedCar, this.car);
     this.sharedService.initCar(this.editedCar);
     console.log('edited:' + this.editedCar.name);
     this.sharedService.save();
     this.matdialog.closeAll();
+    return true;
+    }
   }
-  Cale() {    
+  Cancel() {    
     this.editedCar.name = this.car.name;
     this.editedCar.speed = this.car.speed;
     this.editedCar.path_picturs = this.car.path_picturs;
